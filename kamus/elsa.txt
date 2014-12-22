@@ -1,0 +1,80 @@
+package apilkasi.bagusbudiprakoso.pintarpercakapanbahasainggris;
+
+import com.example.pintarpercakapanbahasainggris.R;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+public class MenuUtama extends Activity implements OnClickListener {
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.menuactivity);
+        
+        View Percakapan = findViewById(R.id.button1); 
+    	Percakapan.setOnClickListener((OnClickListener) this);
+    	View PenggunaanPercakapan = findViewById(R.id.button2); 
+    	PenggunaanPercakapan.setOnClickListener((OnClickListener) this);
+    	View Kuis = findViewById(R.id.button3); 
+    	Kuis.setOnClickListener((OnClickListener) this);
+    	View Option = findViewById(R.id.button4); 
+    	Option.setOnClickListener((OnClickListener) this);
+    	View Help = findViewById(R.id.button5); 
+    	Help.setOnClickListener((OnClickListener) this);
+    	View Exit = findViewById(R.id.button6); 
+    	Exit.setOnClickListener((OnClickListener) this);
+    }
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+        
+        case R.id.button1:
+        	Intent menu = new Intent(this, Conversation.class);
+            startActivity(menu);
+             break;
+        case R.id.button2:
+        	Intent menu3 = new Intent(this, PenggunaanPercakapan.class);
+        	startActivity(menu3);
+        	break;
+        case R.id.button3:
+        	Intent menu1 = new Intent(this, soal.class);
+            startActivity(menu1);
+              break;
+        case R.id.button4:
+        	Intent menu4 = new Intent(this, About.class);
+            startActivity(menu4);
+              break;
+        case R.id.button5:
+        	Intent menu5 = new Intent(this, Help.class);
+            startActivity(menu5);
+              break;
+        case R.id.button6:
+        	AlertDialog.Builder mauKeluar = new AlertDialog.Builder(MenuUtama.this);
+    		mauKeluar.setMessage("Yakin Anda Mau Keluar ?").setCancelable(false)
+    		.setPositiveButton("YA",new AlertDialog.OnClickListener(){
+    			
+    			public void onClick(DialogInterface arg0,int arg1){
+    				Intent exit = new Intent (Intent.ACTION_MAIN);
+    				exit.addCategory(Intent.CATEGORY_HOME);
+    				exit.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+    				startActivity(exit);
+    			}
+    		})
+    		.setNegativeButton("TIDAK",new AlertDialog.OnClickListener(){
+    			
+    			public void onClick(DialogInterface dialog,int arg1){
+    			dialog.cancel();
+    			}	
+    		});
+    		AlertDialog judul = mauKeluar.create();
+    		judul.setTitle("Keluar ?");
+    		judul.show();
+        }
+    }
+}

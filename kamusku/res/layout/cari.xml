@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sik"
+    android:orientation="vertical"
+    tools:ignore="Overdraw" >
+
+    <EditText
+        android:id="@+id/istilah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cari..."
+        android:singleLine="true"
+        android:textColorHint="@android:color/black"
+        tools:ignore="HardcodedText,MissingPrefix,MissingPrefix" />
+
+    <ListView
+        android:id="@+id/lv_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/istilah"
+        tools:ignore="ObsoleteLayoutParam" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lv_data"
+        android:layout_marginLeft="20dp"
+        android:text="Istilah yang Anda cari tidak tersedia"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText,ExtraText,ObsoleteLayoutParam" >
+
+    </TextView>
+
+</LinearLayout>
