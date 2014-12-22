@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KIIDok</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="tentang">Tentang</string>
+    <string name="exit">Keluar</string>
+    <string name="pesan_tentang">Selamat Datang. Aplikasi Kamus Istilah Ilmu Kedokteran ini dibuat tahun 2014 untuk memenuhi tugas mata kuliah. Copyright © 2014 [ Utami Budi Rahayu || 1127050166 ]</string>
+    <string name="back">Kembali</string>
+    <string name="ok">Ya</string>
+    <string name="app_exit">Keluar</string>
+    <string name="pesan_app_exit">Apakah yakin ingin keluar?</string>
+    <string name="no">Tidak</string>
+    <string name="copyright">Copyright © 2014</string>
+
+</resources>
